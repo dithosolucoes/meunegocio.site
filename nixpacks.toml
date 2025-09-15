@@ -1,0 +1,11 @@
+[phases.dev]
+# Instala as dependências antes de iniciar o servidor
+install_cmd = "npm install"
+# O comando para iniciar o servidor de desenvolvimento Next.js
+start_cmd = "npm run dev" 
+
+[previews]
+# Define a porta que o preview irá usar
+port = 3000
+# Comando opcional para abrir o preview, se necessário
+# start_cmd = "npm run dev"
