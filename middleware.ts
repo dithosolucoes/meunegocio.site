@@ -29,8 +29,9 @@ export default function middleware(req: NextRequest) {
     ? hostname.replace(`.meunegocio.site`, '')
     : hostname.replace(`.localhost:3000`, '');
 
-
-  if (currentHost === hostname) {
+  // Handle requests for the landing page (root domain)
+  // This now correctly handles the Vercel URL and the custom root domain (which results in an empty currentHost)
+  if (currentHost === hostname || currentHost === '') {
      url.pathname = `/`;
      return NextResponse.rewrite(url);
   }
